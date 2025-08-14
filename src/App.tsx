@@ -5,9 +5,11 @@ import { KanbanBoard } from './components/KanbanBoard';
 import { ContactList } from './components/ContactList';
 import { DealsList } from './components/DealsList';
 import { TaskManager } from './components/TaskManager';
+import { Settings } from './components/Settings';
 import { useDeals } from './hooks/useDeals';
 import { useContacts } from './hooks/useContacts';
 import { ViewType } from './types';
+import { AppProvider } from './contexts/AppContext';
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('dashboard');
@@ -26,15 +28,19 @@ function App() {
         return <DealsList deals={deals} addDeal={addDeal} updateDeal={updateDeal} deleteDeal={deleteDeal} contacts={contacts} />;
       case 'tasks':
         return <TaskManager />;
+      case 'settings':
+        return <Settings />;
       default:
         return <Dashboard deals={deals} contacts={contacts} />;
     }
   };
 
   return (
-    <Layout currentView={currentView} onViewChange={setCurrentView}>
-      {renderContent()}
-    </Layout>
+    <AppProvider>
+      <Layout currentView={currentView} onViewChange={setCurrentView}>
+        {renderContent()}
+      </Layout>
+    </AppProvider>
   );
 }
 

@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Theme variables */
+:root {
+  --color-primary: #3B82F6;
+  --color-secondary: #6B7280;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-background: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-text: #111827;
+}
+
+[data-theme="dark"] {
+  --color-primary: #60A5FA;
+  --color-secondary: #9CA3AF;
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-error: #F87171;
+  --color-background: #111827;
+  --color-surface: #1F2937;
+  --color-text: #F9FAFB;
+}
+
+[data-theme="blue"] {
+  --color-primary: #1E40AF;
+  --color-secondary: #3B82F6;
+  --color-background: #EFF6FF;
+  --color-text: #1E3A8A;
+}
+
+[data-theme="green"] {
+  --color-primary: #059669;
+  --color-secondary: #10B981;
+  --color-background: #ECFDF5;
+  --color-text: #064E3B;
+}
+
+[data-theme="purple"] {
+  --color-primary: #7C3AED;
+  --color-secondary: #A78BFA;
+  --color-background: #F3E8FF;
+  --color-text: #581C87;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--color-surface) !important;
+}
+
+[data-theme="dark"] .text-gray-900 {
+  color: var(--color-text) !important;
+}
+
+[data-theme="dark"] .border-gray-200 {
+  border-color: #374151 !important;
+}
+
+[data-theme="dark"] .bg-gray-50 {
+  background-color: #1F2937 !important;
+}

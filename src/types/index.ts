@@ -76,4 +76,4 @@ export interface DashboardStats {
   pipelineVelocity: number;
 }
 
-export type ViewType = 'dashboard' | 'pipeline' | 'contacts' | 'deals' | 'tasks';
+export type ViewType = 'dashboard' | 'pipeline' | 'contacts' | 'deals' | 'tasks' | 'settings';
